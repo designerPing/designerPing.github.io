@@ -12,3 +12,6 @@ categories: blog
 身为小白，还好有ChatGPT一步一步指导。
 ![示例图片](/_posts/images/sunshine.webp)
 
+<img src="{{ "_posts/images/sunshine.webp" | relative_url }}" alt="示例图片" />
+
+
