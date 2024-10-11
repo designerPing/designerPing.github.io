@@ -10,5 +10,5 @@ categories: blog
 # 昨天的Github博客内容
 
 身为小白，还好有ChatGPT一步一步指导。
-![示例图片](images/sunshine.webp)
+![示例图片](/_posts/images/sunshine.webp)
 
