@@ -1,0 +1,18 @@
+# 网站的基本信息
+title: My GitHub Page
+description: 这是我的个人博客
+baseurl: "" # 如果你的仓库名是 username.github.io，保持空白
+url: "https://designerPing.github.io" # 填写你的实际 GitHub Pages 网址
+
+# 网站语言
+lang: en
+
+# 编码设置
+encoding: utf-8
+
+# 主题设置
+theme: minima # 默认 Jekyll 提供的一个主题
+
+# 其他自定义设置
+markdown: kramdown # 指定使用 kramdown 作为 markdown 解析器
+paginate: 5 # 每页显示 5 篇文章
