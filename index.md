@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "我的第一篇文章"
+title: "我的第一篇文章index"
 date: 2024-10-11
 categories: blog
 ---
