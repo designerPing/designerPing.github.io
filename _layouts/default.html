@@ -41,7 +41,16 @@
       </header>
       
       <section>
-        {{content}}
+        <h2>Blog Posts</h2>
+        {% for post in site.posts %}
+          <article>
+            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            <p class="post-meta">{{ post.date | date: "%B %d, %Y" }}</p>
+            <div class="post-excerpt">
+              {{ post.excerpt }}
+            </div>
+          </article>
+        {% endfor %}
       </section>
       
       <footer>
