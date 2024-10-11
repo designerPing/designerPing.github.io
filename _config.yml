@@ -11,8 +11,8 @@ lang: en
 encoding: utf-8
 
 # 主题设置
-theme: minima # 默认 Jekyll 提供的一个主题
+theme: jekyll-theme-minimal
 
 # 其他自定义设置
 markdown: kramdown # 指定使用 kramdown 作为 markdown 解析器
-paginate: 5 # 每页显示 5 篇文章
+paginate: 10 # 每页显示 10 篇文章
