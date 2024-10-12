@@ -8,15 +8,17 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     {% include head-custom.html %}
+    
     <style>
       img {
         max-width: 100%;
         height: auto;
       }
     
-      /* 让 .site-header 和 .site-footer 固定 */
+      /* 让 .site-header 和 .site-footer 固定在左侧 */
       .site-header {
-        width: 100%;
+        width: 20%;
+        height: auto; /* 让头部占据内容所需的高度 */
         position: fixed;
         top: 0;
         left: 0;
@@ -26,7 +28,8 @@
       }
     
       .site-footer {
-        width: 100%;
+        width: 20%;
+        height: auto; /* 让页脚占据内容所需的高度 */
         position: fixed;
         bottom: 0;
         left: 0;
@@ -35,17 +38,16 @@
         z-index: 15; /* 保持在其他内容上方 */
       }
     
-      /* 确保中间内容不会和头部和尾部重叠 */
+      /* 确保中间内容不会和左侧的头部和尾部重叠 */
       .container {
-        padding-top: 8rem; /* 根据 .site-header 的高度调整 */
-        padding-bottom: 8rem; /* 根据 .site-footer 的高度调整 */
+        margin-left: 20%; /* 为主要内容留出足够的左侧空间 */
+        padding: 2rem;
       }
     
       .post {
         margin-bottom: 4rem;
-        width: calc(95% - 30%);
-        position: relative; /* 修改为 relative 避免粘性导致重叠 */
-        top: 0;
+        width: calc(95% - 20%); /* 调整宽度，避开左侧固定区域 */
+        position: relative;
         left: 1rem;
         background: #fff;
         padding-right: 1rem;
@@ -71,8 +73,8 @@
     
       .post-header {
         margin-bottom: 4rem;
-        width: calc(95% - 30%);
-        position: relative; /* 修改为 relative 避免粘性导致重叠 */
+        width: calc(95% - 20%); /* 调整宽度，避开左侧固定区域 */
+        position: relative;
         top: 0;
         left: 80px;
         background: #fff;
@@ -82,7 +84,7 @@
       }
     
       .post-body {
-        width: calc(95% - 30%);
+        width: calc(95% - 20%); /* 调整宽度，避开左侧固定区域 */
         margin-top: 8rem;
         left: 80px;
         padding-right: 2rem;
@@ -94,18 +96,20 @@
       .white-background {
         position: fixed;
         top: 0;
-        left: 0;
-        width: 100%;
+        left: 20%; /* 留出左侧 20% 的空间 */
+        width: 80%;
         height: 8rem;
         background-color: #fff;
         z-index: 5;
       }
     
-      /* 不再粘性处理，直接使用普通布局 */
       .site-header .container, .site-footer .container {
         max-width: 100%;
       }
     </style>
+    
+
+
     
   </head>
   <body>
