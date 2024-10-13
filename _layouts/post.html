@@ -40,11 +40,6 @@
         z-index: 15; /* 保持在其他内容上方 */
       }
     
-      /* 确保中间内容不会和左侧的头部和尾部重叠 */
-      .container {
-        margin-left: 20%; /* 为主要内容留出足够的左侧空间 */
-        padding: 2rem;
-      }
     
       .post {
         margin-bottom: 4rem;
@@ -75,9 +70,9 @@
     
       /* 让 post-header 固定在距离顶部 4rem 的位置 */
       .post-header {
-        width: calc(95% - 20%);
+        width: calc(95% - 22%);
         position: fixed;
-        top: 4rem;
+        top: 3rem;
         left: 20%; /* 确保它在主内容区域，避开左侧栏 */
         background: #fff;
         padding-right: 2rem;
@@ -87,7 +82,7 @@
     
       /* 让 post-body 位于 header 之后，避免与 header 重叠 */
       .post-body {
-        width: calc(95% - 20%);
+        width: calc(95% - 22%);
         margin-top: 10rem; /* 留出足够空间，以避开固定的 header */
         left: 80px;
         padding-right: 2rem;
@@ -96,16 +91,14 @@
         z-index: 1;
       }
     
-      /* 让 post-footer 固定在距离底部 1rem 的位置 */
       .post-footer {
-        width: calc(95% - 20%);
+        width: calc(95% - 22%);
         position: fixed;
-        bottom: 1rem;
-        left: 20%; /* 确保它在主内容区域，避开左侧栏 */
         background: #fff;
         padding-right: 2rem;
         padding-left: 2rem;
         z-index: 10;
+        bottom: 0;
       }
     
       .white-background {
