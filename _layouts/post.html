@@ -2,18 +2,23 @@
 <html lang="{{ site.lang | default: 'en' }}">
   <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ page.title }} | {{ site.title }}</title>
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     {% include head-custom.html %}
+    
     <style>
-      .post-header, .post-footer {
+        .post-header {
         position: fixed;
         width: 80%;
+        top: 0;
+        padding-top: 4rem;
         left: 20rem;
         background: #fff;
-        padding: 4rem 2rem 2rem;
+        padding-right: 2rem;
+        padding-left: 2rem;
         z-index: 10;
       }
 
@@ -21,14 +26,37 @@
         left: 10rem;
         width: 76%;
         margin-top: 6rem; 
-        padding: 0 2rem;
         position: relative;
         z-index: 1;
       }
+    
+      .post-footer {
+        left: 20rem;
+        width: 80%;
+        position: fixed;
+        background: #fff;
+        padding-right: 2rem;
+        padding-left: 2rem;
+        padding-bottom: 2rem; 
+        bottom: 0;
+        z-index: 10;
+
+      }
+
+
+
     </style>
+
+
+
+    
+    
+
+    
   </head>
   <body>
-    <header class="site-header">
+    <div class="white-background"></div>
+    <header class="site-header" >
       <div class="container">
         <h1 class="site-title"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
         <p class="site-description">{{ site.description }}</p>
@@ -46,9 +74,13 @@
         <header class="post-header">
           <h2 class="post-title">{{ page.title }}</h2>
           <p class="post-meta">
-            <i class="fas fa-calendar-alt"></i> {{ page.date | date: "%B %d, %Y" }}
+            <span class="post-date">
+              <i class="fas fa-calendar-alt"></i> {{ page.date | date: "%B %d, %Y" }}
+            </span>
             {% if page.categories %}
-              | <i class="fas fa-folder"></i> {{ page.categories | join: ', ' }}
+            <span class="post-categories">
+              <i class="fas fa-folder"></i> Categories: {{ page.categories | join: ', ' }}
+            </span>
             {% endif %}
           </p>
         </header>
@@ -59,19 +91,21 @@
       </article>
 
       <section class="post-footer">
-        {% if page.tags %}
+        <div class="tags">
+          {% if page.tags %}
           <p><strong>Tags:</strong> 
             {% for tag in page.tags %}
               <a href="{{ '/tags/' | append: tag | relative_url }}" class="tag">#{{ tag }}</a>
             {% endfor %}
           </p>
-        {% endif %}
+          {% endif %}
+        </div>
         <div class="post-navigation">
           {% if page.previous %}
-            <a class="prev-post" href="{{ page.previous.url | relative_url }}">&larr; {{ page.previous.title }}</a>
+          <a class="prev-post" href="{{ page.previous.url | relative_url }}">&larr; {{ page.previous.title }}</a>
           {% endif %}
           {% if page.next %}
-            <a class="next-post" href="{{ page.next.url | relative_url }}">{{ page.next.title }} &rarr;</a>
+          <a class="next-post" href="{{ page.next.url | relative_url }}">{{ page.next.title }} &rarr;</a>
           {% endif %}
         </div>
       </section>
