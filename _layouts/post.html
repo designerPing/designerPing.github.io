@@ -9,6 +9,39 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     {% include head-custom.html %}
     
+    <style>
+        .post-header {
+        width: calc(95% - 22%);
+        position: fixed;
+        top: 3rem;
+        background: #fff;
+        padding-right: 2rem;
+        padding-left: 2rem;
+        z-index: 10;
+      }
+
+      .post-body {
+        width: calc(95% - 22%);
+        margin-top: 10rem; /* 留出足够空间，以避开固定的 header */
+        padding-right: 2rem;
+        padding-left: 2rem;
+        position: relative;
+        z-index: 1;
+      }
+    
+      .post-footer {
+        width: calc(95% - 22%);
+        position: fixed;
+        background: #fff;
+        padding-right: 2rem;
+        padding-left: 2rem;
+        z-index: 10;
+        bottom: 0;
+      }
+
+
+
+    </style>
 
 
 
