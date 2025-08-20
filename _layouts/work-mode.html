@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>工作模式切换</title>
+  <style>
+    body {
+      transition: background-color 0.3s, color 0.3s;
+    }
+  </style>
+</head>
+<body>
+  <h1>工作模式切换</h1>
+  <label><input type="radio" name="mode" value="standby"> 待机模式</label>
+  <label><input type="radio" name="mode" value="active" checked> 退出待机</label>
+  <script>
+    const radios = document.querySelectorAll('input[name="mode"]');
+    function updateMode() {
+      const mode = document.querySelector('input[name="mode"]:checked').value;
+      if (mode === 'standby') {
+        document.body.style.backgroundColor = '#121212';
+        document.body.style.color = '#ffffff';
+      } else {
+        document.body.style.backgroundColor = '#ffffff';
+        document.body.style.color = '#000000';
+      }
+    }
+    radios.forEach(radio => radio.addEventListener('change', updateMode));
+    updateMode();
+  </script>
+</body>
+</html>
